@@ -36,3 +36,121 @@ public class StreamAPIOne {
         
     }
 }
+
+In this case generate() is working as a data Source.
+generate() keeps producing data which are streamed in a data pipe.
+
+2. Stream.of(--)
+
+
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+
+public class Stream_API_Two {
+
+    public static void main(String[] args) {
+        /*Consumer<Integer> consumer=new Consumer<Integer>() {
+
+            @Override
+            public void accept(Integer integerObj) {
+
+                System.out.println(integerObj);
+            }
+        };*/
+
+       /* Stream<Integer> integerStream=Stream.of(1,2,3,5,8,9,7);
+        integerStream.forEach(consumer);*/
+
+       // Stream.of(1,2,3,5,8,9,7).forEach(consumer);
+
+        //lamda version
+
+        Stream.of(1,2,3,5,8,9,7,9).forEach(integerObj-> System.out.println(integerObj));
+
+    }
+
+}
+
+-------------------------------------------
+
+package com.svip.StreamAPI;
+
+public class Student {
+
+    private int id;
+    private String studentName;
+    private Long mobileNumber;
+    private int age;
+
+    public Student(int id, String studentName, Long mobileNumber, int age) {
+        this.id = id;
+        this.studentName = studentName;
+        this.mobileNumber = mobileNumber;
+        this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public Long getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(Long mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", studentName='" + studentName + '\'' +
+                ", mobileNumber=" + mobileNumber +
+                ", age=" + age +
+                '}';
+    }
+
+}
+-------------------------------------------------
+package com.svip.StreamAPI;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class Student_Stream_App {
+    public static void main(String[] args) {
+
+        Student vidyadhar=new Student(101,"Vidyadhar",9860007013L,36);
+        Student sachin=new Student(102,"sachin",0007013L,35);
+        Student mayur=new Student(103,"mayur",146666L,26);
+
+       List<Student> studentList= Arrays.asList(vidyadhar,sachin,mayur);
+       Stream<Student> stream=studentList.stream();
+      // stream.forEach(System.out::println);
+       stream.forEach(student-> System.out.println(student));
+    }
+}
+
+
