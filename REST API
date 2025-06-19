@@ -1,0 +1,17 @@
+REST API InterView Questions
+
+Put vs PATCH.
+
+https://www.geeksforgeeks.org/javascript/difference-between-put-and-patch-request/
+
+HTTP PUT request is used to replace and update the entire resource or
+document, while the PATCH request only updates the specific parts of that
+document.
+When working with APIs, figuring out the right way to update resources
+can be tricky. Both PUT and PATCH requests are used for this purpose.
+This guide will break down the key differences between these two
+methods, helping you choose the most appropriate approach for your
+needs.
+
+When deciding between PUT and PATCH, consider whether you need to update the entire resource or just part of it. 
+Use PUT when you want to completely replace a resource, and use PATCH when you only need to make small updates.
