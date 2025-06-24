@@ -1,0 +1,144 @@
+Core Java Oops Concept:
+The Main buidling Block of OOP
+1) Inheritance
+2)Polymorphism
+3)Abstraction
+4)Encapsulation.
+
+1) Inheritance:
+The Proccess of Acquiring properties(Variable) and methods(Behaviours)from one class to another class is called Inheritance.
+-We are achieving inheritance concept by using extends keyword. Inheritance is also known as IS-A-Relationship.
+-Extends keyword is providing Relationship between two classes.
+-The main Objective of inheritance is code reuseability whenever we are extending the class Automatically code is re used.
+-In Inheritance one class extending the class automatically code is reused.
+- In Inheritance parent class is giving properties and child is acquiring the properties from parent.
+Object Creation of Parent and child classes.
+
+1. Basic Inheritance
+Scenario: You have a parent class Animal and a child class Dog.
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Object Creation
+Animal myAnimal = new Animal(); // Parent class object
+Dog myDog = new Dog();          // Child class object
+
+2. Upcasting
+Scenario: You can create a child class object and assign it to a parent class reference.
+
+Animal myDog = new Dog(); // Upcasting
+myDog.sound(); // Outputs: Dog barks
+
+3. Downcasting
+Scenario: You can downcast a parent class reference back to a child class.
+
+Animal myAnimal = new Dog(); // Upcasting
+Dog myDog = (Dog) myAnimal;   // Downcasting
+myDog.sound(); // Outputs: Dog barks
+
+4. Method Overriding
+Scenario: The child class overrides a method from the parent class.
+
+5. Abstract Classes
+Scenario: Using an abstract class as a parent.
+
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+Shape myShape = new Circle(); // Object creation
+myShape.draw(); // Outputs: Drawing Circle
+
+6. Interfaces
+Scenario: Implementing an interface in a child class.
+
+interface Vehicle {
+    void start();
+}
+
+class Car implements Vehicle {
+    public void start() {
+        System.out.println("Car started");
+    }
+}
+
+Vehicle myCar = new Car(); // Object creation
+myCar.start(); // Outputs: Car started
+
+7. Constructor Chaining
+Scenario: Using constructors in parent and child classes.
+
+class Parent {
+    Parent() {
+        System.out.println("Parent Constructor");
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        super(); // Calls Parent constructor
+        System.out.println("Child Constructor");
+    }
+}
+
+Child myChild = new Child(); // Outputs: Parent Constructor, Child Constructor
+
+8. Multiple Levels of Inheritance
+Scenario: A child class inherits from another child class.
+
+class Grandparent {
+    void display() {
+        System.out.println("Grandparent");
+    }
+}
+
+class Parent extends Grandparent {
+    void display() {
+        System.out.println("Parent");
+    }
+}
+
+class Child extends Parent {
+    void display() {
+        System.out.println("Child");
+    }
+}
+
+Child myChild = new Child();
+myChild.display(); // Outputs: Child
+
+
+9. Polymorphism
+Scenario: Using polymorphism to call overridden methods.
+
+Animal myAnimal = new Dog();
+myAnimal.sound(); // Outputs: Dog barks
+
+myAnimal = new Cat();
+myAnimal.sound(); // Outputs: Cat meows
+
+10. Collections of Parent and Child Objects
+Scenario: Storing child objects in a collection of parent type.
+
+List<Animal> animals = new ArrayList<>();
+animals.add(new Dog());
+animals.add(new Cat());
+
+for (Animal animal : animals) {
+    animal.sound(); // Outputs: Dog barks, Cat meows
+}
