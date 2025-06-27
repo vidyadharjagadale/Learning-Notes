@@ -4,3 +4,10 @@ Group of character is called as String.
 -Sequence of Characters is called String.
 -Collection of charcters is called a String 
 -In Java we can represent the Strings in double quotes.
+Exmples:
+"Abc","ac123","123456","abc$123"
+-String is not primitive data type in java
+primitive->byte,short,int,long,float,double,char,boolean
+
+String is an Object in java.It is most commonally used object in java.
+
