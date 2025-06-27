@@ -11,3 +11,13 @@ primitive->byte,short,int,long,float,double,char,boolean
 
 String is an Object in java.It is most commonally used object in java.
 
+mutable String Object->Modification are allowed ->Buffer and builder
+immutable String Object-> Modification are not allowed -> String
+
+Below are the String Class
+
+java.lang.String
+java.lang.StringBuffer
+java.lang.StringBuilder
+java.util.StringTokenizer
+
